@@ -1,4 +1,15 @@
-.container-color{
+body{
+    font-family: 'Roboto', sans-serif;
+}
 
-    background-color: rgb(190, 190, 165);
+
+header{
+    height: 50px;
+    background-color: bisque;
+}
+
+
+.psw-validator{
+    height: 350px;
+    background-color: blue;
 }
