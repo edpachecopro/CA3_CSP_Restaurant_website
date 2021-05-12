@@ -12,42 +12,114 @@
 
 </head>
 <body>
-   <div class="container-lg container-color" >
-       <header class="row">
-           <div class="col-md-4"> CA3 JavaScript </div>
-           <div class="col-md-4 offset-md-4 menu"> <a href="#">HOME</a> | <a href="#"> JavaScript </a></div>
-       </header>
+   <div class="container-fluid container-color" >
+    
 
-       <section id="psswd" class="row psw-validator">
+    <!--HEADER  Creating the header of the website-->
+    <div id="header">
+        <div class="container">
+          <nav class="navbar navbar-expand-lg navbar-light d-flex">
+  
+            <a class="navbar-brand" href="#">
+                <p>CS3 JavaScript</p>
+            </a>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-toggle="collapse"
+              data-target="#navbarNav"
+              aria-controls="navbarNav"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+  
+            </button>
+  
+            <div class="collapse navbar-collapse d-flex" id="navbarNav">
+              <ul class="navbar-nav">
+                <li class="nav-item"> <a class="nav-link active"  href="index.html">Home</a> </li>
+                <li class="nav-item"> <a class="nav-link" href="about.html">About me</a></li>
+                <li class="nav-item"><a class="nav-link" href="service.html">Services</a></li>
+                <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+              </ul>
+            </div>
+  
+          </nav>
+        </div>
+      </div>
+      <!--//HEADER-->
+
+
+
+
+       <div id="psswd" class="row psw-validator">
 
         <div class="col-sm-6 col-md-5 col-lg-6">
-            <img src="">
-            <p>Staffs password validator</p>
+            <svg class="lock-svg"  width="136.102" height="100.882" viewBox="0 0 176.102 140.882">
+                <path id="Icon_awesome-user-lock" data-name="Icon awesome-user-lock" d="M61.636,70.441a35.22,35.22,0,1,0-35.22-35.22,35.22,35.22,0,0,0,35.22,35.22Zm26.415,17.61a17.357,17.357,0,0,1,2.229-8.392,37.656,37.656,0,0,0-3.99-.413h-4.6a47.9,47.9,0,0,1-40.118,0h-4.6A36.988,36.988,0,0,0,0,116.219v11.455a13.208,13.208,0,0,0,13.208,13.208H90.5a17.484,17.484,0,0,1-2.449-8.805ZM167.3,79.246h-8.805V57.233a22.013,22.013,0,0,0-44.026,0V79.246h-8.805a8.805,8.805,0,0,0-8.805,8.805v44.026a8.805,8.805,0,0,0,8.805,8.805H167.3a8.805,8.805,0,0,0,8.805-8.805V88.051A8.805,8.805,0,0,0,167.3,79.246Zm-30.818,39.623a8.805,8.805,0,1,1,8.805-8.805A8.805,8.805,0,0,1,136.479,118.869Zm8.805-39.623h-17.61V57.233a8.805,8.805,0,0,1,17.61,0Z" fill="#fff"/>
+            </svg>
+              
+            <p class="pswd-text">Staffs password validator </p>
         </div>
         <div class="col-sm-6 col-md-5 offset-md-2 col-lg-6 offset-lg-0">
-            <input type="password" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline" placeholder="> TYPE YOUR PASSORD HERE">
-    
-            <a href="#">CHECK PASSAWORD</a>
 
-            <span id="passwordHelpInline" class="form-text">
-                Must be 8 characters long at least 1 uppercase letter and 1 special characters.
-              </span>
+
+            <div class="form">
+                <div class="form-element">
+                    <input type="" id="password-field" class=" form-pswd form-control "  placeholder="> TYPE YOUR PASSORD HERE">
+
+                  <div class="show-password">
+                    <i class="fa fa-eye"></i>
+                    <i class="fa fa-eye-slash"></i>
+                  </div>
+                  <div class="password-policies">
+                    <div class="pswd-contain"> Your password must contain: </div>
+                    
+                    <div class="policy-length">
+                        <svg  width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+                            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+                          </svg>  8 Characters
+                    </div>
+                    <div class="policy-number">
+                        <svg  width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+                            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+                          </svg>  Contains Number
+                    </div>
+                    <div class="policy-uppercase">
+                        <svg  width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+                            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+                          </svg>  Contains Uppercase
+                    </div>
+                    <div class="policy-special">
+                        <svg  width="16" height="16" fill="currentColor" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
+                            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+                          </svg>  Contains Special Characters
+                    </div>
+                  </div>
+                </div>
+              </div>
+
         </div>
        
     
-       </section>
+       </div>
 
-       <section >
-           <div id="users">
-
-           </div>
+       <div class=" container sec-users" >
+           <div id="users" >
+     
+        </div>
+   
        
-       </section>
+       </div>
+       <svg id="Layer_1" class="bg-svg"  viewBox="0 0 1920 216.53"><defs><style>.cls-1{fill:#fff;}</style></defs><polygon id="bg-svg-menu" class="cls-1" points="658.93 60.87 981.43 216.53 1305.64 60.87 1920 60.87 1920 0 0 0 0 60.87 658.93 60.87"/></svg>
 
-       <section id="menu">
-           <div class="startes">
+       <div class=" row  mt-5 bg-menu-purple ">
+        <div class="row  mt-5 justify-content-center ">
+            
+           <div class="m-5 col-4 bg-menu">
                <h1>startes</h1>
-                <table style="width: 100%;">
+               <table class=" table table-striped table-hover " >
                     <tr>
                         <td>BBQ</td>
                         <td>12.50</td>
@@ -87,9 +159,11 @@
                 </table>
            </div>
 
-           <div class="startes">
+        
+
+           <div class="m-5 col-4 bg-menu">
             <h1>Main</h1>
-             <table style="width: 100%;">
+             <table class="table table-striped " >
                  <tr>
                      <td>BBQ</td>
                      <td>12.50</td>
@@ -129,9 +203,9 @@
              </table>
         </div>
 
-        <div class="startes">
+        <div class="m-5 col-4 bg-menu">
             <h1>Desserts</h1>
-             <table style="width: 100%;">
+            <table class="table table-striped " >
                  <tr>
                      <td>BBQ</td>
                      <td>12.50</td>
@@ -169,11 +243,12 @@
                      <td> total</td>
                  </tr>
              </table>
-        </div>
+      
+            </div>
 
-        <div class="startes">
+            <div class="m-5 col-4 bg-menu">
             <h1>Drinks</h1>
-             <table style="width: 100%;">
+            <table class="table table-striped " >
                  <tr>
                      <td>BBQ</td>
                      <td>12.50</td>
@@ -211,9 +286,9 @@
                      <td> total</td>
                  </tr>
              </table>
+            </div>
+            </div>
         </div>
-
-       </section> 
 
        <section id="calculator">
 
