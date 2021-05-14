@@ -134,33 +134,31 @@
                                     <tr>
                                         <td> <div class="prod-name"> BBQ </div></td>
                                         <td>
-                                            <div id="item_1" data-item="1" class="button-container">            
-                                                <input type="text"  name="qty" min="0" class="veg qty form-control" value="0" data-veg=false data-categ="Starters"/>
-                                                <button class="cart-qty-minus" type="button" onClick="check_item(this.value);" value="1"><<area</button>
+                                            
+                                            <div class="button-container">            
+                                                <input type="text"  name="qty" min="0" class="qty form-control" value="0" data-veg=false data-categ="Starters"/>
+                                                <span>x</span><input type="text" value="5" class="price form-control" disabled>  
+                                                <button class="cart-qty-minus" type="button" onClick="check_item(this.value);" value="1"><</button>
                                                 <button class="cart-qty-plus" type="button"  onClick="check_item(this.value);" value="1" >></button>
-                                                
-                                                           
+           
                                             </div>
                                         </td>
- 
-                                        <td> <span>€</span><input type="text" value="11" class="price form-control" disabled> </td>
-                                        <td align="right">€ <span id="amount" class="amount">0</span></td>
+                                        <td align="right">€<span id="amount" class="amount">0</span></td>
                                     </tr>
 
                                     <tr>
                                         <td> <div class="prod-name"> Vegan </div></td>
                                         <td>
-                                            <div id="item_2" data-item="2"  class="button-container">            
-                                                <input type="text"  name="qty" min="0" class="qty form-control" value="0" data-veg=true data-categ="main"/>
-                                                <button class="cart-qty-minus" type="button" onClick="check_item(this.value);" value="2">-</button>
-                                                <button class="cart-qty-plus" type="button" onClick="check_item(this.value);" value="2">+</button>
-                                                <input type="text" class="category" value="startes" hidden>  
-                                                <input type="text" class="veg" value="yes" hidden>                                
+                                            
+                                            <div class="button-container">            
+                                                <input type="text"  name="qty" min="0" class="qty form-control" value="0" data-veg=true data-categ="Main"/>
+                                                <span>x</span><input type="text" value="2" class="price form-control" disabled>  
+                                                <button class="cart-qty-minus" type="button" onClick="check_item(this.value);" value="2"><</button>
+                                                <button class="cart-qty-plus" type="button"  onClick="check_item(this.value);" value="2">></button>
+           
                                             </div>
                                         </td>
-
-                                        <td> <span>€</span><input type="text" value="7" class="price form-control" disabled> </td>
-                                        <td align="right">€ <span id="amount" class="amount">0</span></td>
+                                        <td align="right">€<span id="amount" class="amount">0</span></td>
                                     </tr>
 
 
@@ -170,11 +168,15 @@
                                 </table>
 
 
-                                <h1> <br> TOTAL = €  <span id="total" class="total">0 </span> </h1>
-                                <h1> <br> TOTAL VEG = €  <span id="total_veg" class="total_veg">0 </span> </h1>
-                                <h1> <br> split 3 = €  <span id="split" class="split">0 </span> </h1>
+                                <h2> <br> No-VEG = €  <span id="total_no_veg" class="total_no_veg">0 </span> </h2>
+                                <h2> <br> TOTAL VEG = €  <span id="total_veg" class="total_veg">0 </span> </h2>
+                                <h2> <br> TOTA ALL = €  <span id="total_all" class="total_all">0 </span> </h2>
+                                <h2> <br> split in 3 = €  <span id="split" class="split">0 </span> </h2>
                                 
-                                    
+                               
+               
+
+
                     </div>
                 </div>
          </div>
@@ -197,6 +199,7 @@
    <script src='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js'></script>
     
 <script src="script.js"></script>
+<script src="menu.js"></script>
 
 </body>
 </html>

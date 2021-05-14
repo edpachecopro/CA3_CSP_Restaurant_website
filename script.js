@@ -1,8 +1,4 @@
 
-
-
-
-
 // Script created to show the user from ramdom.me
     //Get API
     fetch('https://randomuser.me/api/?results=8')
@@ -64,8 +60,7 @@
                 `;
             });
 
-            var str = "Hello world, %ˆ&&**(()) welcome to the universe.";
-            var n = str.includes("$");
+           
 
             //Show On Our Screen All Data
             document.getElementById('users').innerHTML = output;
@@ -133,36 +128,145 @@ function validator(pswd){
 
 
 // ############################################################################################
-// Script for menu
+// Script printing menu from jason that I create 
+
+fetch('menu.jason?menu')
+//fetch('menu.jason?results')
+    .then(res => res.json())
+    .then(data => {
+        // console.log(data);
+
+        let list_items = data.menu;
+        // console.log(author);
+
+        //Get Data Value
+        let output = "";
+
+        list_items.forEach(function (list) {
+            output += `
+
+            <tr>
+            <td> <div class="prod-name"> ${list.item.name} </div></td>
+            <td>
+                
+                <div class="button-container">            
+                    <input type="text"  name="qty" min="0" class="qty form-control" value="0" data-veg=${list.item.veg} data-categ="${list.item.category}"/>
+                    <span>x</span><input type="text" value="${list.item.price}" class="price form-control" disabled>  
+                    <button class="cart-qty-minus" type="button" onClick="check_item(this.value);" value="${list.item.id}"><</button>
+                    <button class="cart-qty-plus" type="button"  onClick="check_item(this.value);" value="${list.item.id}" >></button>
+
+                </div>
+            </td>
+            <td align="right">€<span id="amount" class="amount">0</span></td>
+        </tr>
+
+            `;
+        });
+
+        //Show On Our Screen All Data
+        document.getElementById('menu_jason').innerHTML = output;
+
+    });
 
 
-function update_amounts(test){
 
-    console.log('Veg: ' + test);
 
-    
+
+// ############################################################################################
+// Script printing menu from jason that I create 
+
+
+
+            
+// getting the Item ID 
+var item_num ; 
+
+function check_item(n) {
+    item_num = n;
+};
+
+
+
+var sum_veg = 0;
+
+function update_amounts(is_veg){
+
+  //  console.log('Veg: ' + test);
+
+
 
     var sum = 0.0;
+    
     $('#myTable > tbody  > tr').each(function() {
         var qty = $(this).find('.qty').val();
         var price = $(this).find('.price').val();
         var amount = (qty*price)
-        sum+=amount;
+        
+
+        console.log('total veg 1: ' + sum_veg);
+        
+        if (is_veg == "false"){
+
+            sum+=amount;
+            var total_no_veg =  sum;
+            $('.total_no_veg').text(total_no_veg);
+
+        }else{
+
+            if (sum_veg == 0){
+            
+            sum+=amount;
+            var sum_veg = sum;
+            var total_veg = sum_veg;
+
+            }else{
+
+            sum+=amount;
+            var sum_veg = sum -sum_veg;
+            var total_veg = sum_veg;
+
+
+            }
+
+            sum+=amount;
+            var sum_veg = sum;
+            var total_veg = sum_veg;
+
+          
+
+            $('.total_veg').text(total_veg);
+        }
+
+        console.log('Price: ' + price);
+        console.log('qty: ' + qty);
+        console.log('Sum: ' + sum);
+        console.log('total veg : ' + sum_veg);
+
+
+
+        // atualization of amount for each item
         $(this).find('.amount').text(''+amount);
-        console.log(sum / 3);
+
+        //console.log('SUM TOTAL = ' + sum);
+        //console.log('SUM NO VEG= ' + total_no_veg);
+        //console.log('SUM= VEG ' + total_veg);
+
+        //var total = total_no_veg + total_veg;
+
+     
+        $('.total_all').text(sum); // printing totall in html
+        var split_total = (sum / 3).toFixed(2); // spliting total in 3 and formating
+        $('.split').text(split_total); //printing split in html
+        total_no_veg, total_veg = 0
+
 
     });
 
+
+
     
 
-    if (test == "false"){
-        var total =  sum;
-        $('.total').text(sum);
-    }else{
-        var total_veg = sum;
-        $('.total_veg').text(sum);
-    }
-    
+ 
      //split = total + total_veg ;
    // $('.split').text(split);
     
@@ -181,11 +285,6 @@ var minusBtn = $(".cart-qty-minus");
 
 
 
-var item_num = 0; 
-
-function check_item(n) {
-    item_num = n;
-};
 
 
 
@@ -203,8 +302,8 @@ var incrementQty = plusBtn.click(function() {
 
     update_amounts(veg);
  
-    console.log(categ);
-    console.log(veg);
+   // console.log(categ);
+    //console.log(veg);
     
   
 
@@ -230,10 +329,10 @@ var decrementQty = minusBtn.click(function() {
     let categ = values.getAttribute("data-categ");
     let veg = values.getAttribute("data-veg");
 
-    console.log(categ);
-    console.log(veg);
+   // console.log(categ);
+    //console.log(veg);
 
-    update_amounts();
+    update_amounts(veg);
 });
 
 
