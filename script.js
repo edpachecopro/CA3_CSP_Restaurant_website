@@ -6,6 +6,7 @@
 // Script created to show the user from ramdom.me
     //Get API
     fetch('https://randomuser.me/api/?results=8')
+    //fetch('menu.jason?results')
         .then(res => res.json())
         .then(data => {
             // console.log(data);
@@ -134,13 +135,13 @@ function validator(pswd){
 // ############################################################################################
 // Script for menu
 
-$(document).ready(function(){
-    update_amounts();
-    $('.qty, .price').on('keyup keypress blur change', function(e) {
-        update_amounts();
-    });
-});
-function update_amounts(){
+
+function update_amounts(test){
+
+    console.log('Veg: ' + test);
+
+    
+
     var sum = 0.0;
     $('#myTable > tbody  > tr').each(function() {
         var qty = $(this).find('.qty').val();
@@ -148,27 +149,72 @@ function update_amounts(){
         var amount = (qty*price)
         sum+=amount;
         $(this).find('.amount').text(''+amount);
+        console.log(sum / 3);
+
     });
-    $('.total').text(sum);
+
+    
+
+    if (test == "false"){
+        var total =  sum;
+        $('.total').text(sum);
+    }else{
+        var total_veg = sum;
+        $('.total_veg').text(sum);
+    }
+    
+     //split = total + total_veg ;
+   // $('.split').text(split);
+    
+
 }
 
 
 
 //----------------for quantity-increment-or-decrement-------
 
-
-
 var incrementQty;
 var decrementQty;
+
 var plusBtn  = $(".cart-qty-plus");
 var minusBtn = $(".cart-qty-minus");
+
+
+
+var item_num = 0; 
+
+function check_item(n) {
+    item_num = n;
+};
+
+
+
+// #### ADD Botton
 var incrementQty = plusBtn.click(function() {
-    var $n = $(this)
-    .parent(".button-container")
-    .find(".qty");
+    var $n = $(this).parent(".button-container").find(".qty");
     $n.val(Number($n.val())+1 );
-    update_amounts();
+   
+
+    let check = document.querySelector('#item_' + item_num);
+    let values = check.querySelector("input");
+
+    let categ = values.getAttribute("data-categ");
+    let veg = values.getAttribute("data-veg");
+
+    update_amounts(veg);
+ 
+    console.log(categ);
+    console.log(veg);
+    
+  
+
+
 });
+
+
+
+//###### Minus Botton
+
 var decrementQty = minusBtn.click(function() {
     var $n = $(this)
     .parent(".button-container")
@@ -177,5 +223,19 @@ var decrementQty = minusBtn.click(function() {
     if (QtyVal > 0) {
         $n.val(QtyVal-1);
     }
+
+    let check = document.querySelector('#item_' + item_num);
+    let values = check.querySelector("input");
+
+    let categ = values.getAttribute("data-categ");
+    let veg = values.getAttribute("data-veg");
+
+    console.log(categ);
+    console.log(veg);
+
     update_amounts();
 });
+
+
+
+  

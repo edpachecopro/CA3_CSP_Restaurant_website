@@ -242,7 +242,7 @@ img {
 }
 .cart-qty-plus:hover,
 .cart-qty-minus:hover{
-    background-color: #5161ce;
+    background-color: #610e99;
     color: #fff;
 }
 
@@ -278,4 +278,9 @@ thead tr{
   display: table-cell;
   vertical-align: middle;
 
+}
+
+.td-total{
+  background-color: #5161ce;
+  width: 150px;
 }

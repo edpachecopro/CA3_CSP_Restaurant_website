@@ -14,7 +14,7 @@
 
 <body>
     <div class="container-fluid container-color" >
-            <div id="header">
+                    <div id="header">
                 <div class="container">
                         <nav class="navbar navbar-expand-lg navbar-light d-flex">
                 
@@ -127,134 +127,53 @@
                 <div class="row mt-5 justify-content-center ">
                     
                     <div class="m-5 col-8 bg-menu ">
+                        
                         <h1>startes</h1>
-                                <table id="myTable" class=" txt-al-m table table-striped">                 
+                                <table id="myTable" class=" table table-striped table-hover">                 
                                     <tbody>
-                                       <tr>
-                                        <td> <div class="prod-name"> BBQ a moda Argentina com molho</div></td>
+                                    <tr>
+                                        <td> <div class="prod-name"> BBQ </div></td>
                                         <td>
-                                            <div class="button-container">
+                                            <div id="item_1" data-item="1" class="button-container">            
+                                                <input type="text"  name="qty" min="0" class="veg qty form-control" value="0" data-veg=false data-categ="Starters"/>
+                                                <button class="cart-qty-minus" type="button" onClick="check_item(this.value);" value="1"><<area</button>
+                                                <button class="cart-qty-plus" type="button"  onClick="check_item(this.value);" value="1" >></button>
                                                 
-                                                <input type="text" name="qty" min="0" class="qty form-control" value="0"/>
-                                                <button class="cart-qty-minus" type="button" value="-">-</button>
-                                                <button class="cart-qty-plus" type="button" value="+">+</button>                              
+                                                           
                                             </div>
                                         </td>
-
-                                        <td>
-                                            <span>€</span><input type="text" value="72" class="price form-control" disabled>
-                                        </td>
-                                        <td align="right">$ <span id="amount" class="amount">0</span>
-                                        </td>
+ 
+                                        <td> <span>€</span><input type="text" value="11" class="price form-control" disabled> </td>
+                                        <td align="right">€ <span id="amount" class="amount">0</span></td>
                                     </tr>
 
                                     <tr>
-                                        <td> <div class="prod-name"> Batata Frita</div></td>
+                                        <td> <div class="prod-name"> Vegan </div></td>
                                         <td>
-                                            <div class="button-container">
-                                                
-                                                <input type="text" name="qty" min="0" class="qty form-control" value="0"/>
-                                                <button class="cart-qty-minus" type="button" value="-">-</button>
-                                                <button class="cart-qty-plus" type="button" value="+">+</button>                              
+                                            <div id="item_2" data-item="2"  class="button-container">            
+                                                <input type="text"  name="qty" min="0" class="qty form-control" value="0" data-veg=true data-categ="main"/>
+                                                <button class="cart-qty-minus" type="button" onClick="check_item(this.value);" value="2">-</button>
+                                                <button class="cart-qty-plus" type="button" onClick="check_item(this.value);" value="2">+</button>
+                                                <input type="text" class="category" value="startes" hidden>  
+                                                <input type="text" class="veg" value="yes" hidden>                                
                                             </div>
                                         </td>
 
-                                        <td>
-                                            <span>€</span><input type="text" value="3.5" class="price form-control" disabled>
-                                        </td>
-                                        <td align="right">$ <span id="amount" class="amount">0</span>
-                                        </td>
+                                        <td> <span>€</span><input type="text" value="7" class="price form-control" disabled> </td>
+                                        <td align="right">€ <span id="amount" class="amount">0</span></td>
                                     </tr>
-
-                                    <tr>
-                                        <td> <div class="prod-name"> Costela no bafo de cachaça</div></td>
-                                        <td>
-                                            <div class="button-container">
-                                                
-                                                <input type="text" name="qty" min="0" class="qty form-control" value="0"/>
-                                                <button class="cart-qty-minus" type="button" value="-">-</button>
-                                                <button class="cart-qty-plus" type="button" value="+">+</button>                              
-                                            </div>
-                                        </td>
-
-                                        <td>
-                                            <span>€</span><input type="text" value="8" class="price form-control" disabled>
-                                        </td>
-                                        <td align="right">$ <span id="amount" class="amount">0</span>
-                                        </td>
-                                    </tr>
-
 
 
                                     </tbody>
+                           
                                     
                                 </table>
 
 
-                                <h1> Main </h1>
-                                <table id="myTable" class=" txt-al-m table table-striped">                 
-                                    <tbody>
-                                       <tr>
-                                        <td> <div class="prod-name"> BBQ a moda Argentina com molho</div></td>
-                                        <td>
-                                            <div class="button-container">
-                                                
-                                                <input type="text" name="qty" min="0" class="qty form-control" value="0"/>
-                                                <button class="cart-qty-minus" type="button" value="-">-</button>
-                                                <button class="cart-qty-plus" type="button" value="+">+</button>                              
-                                            </div>
-                                        </td>
-
-                                        <td>
-                                            <span>€</span><input type="text" value="72" class="price form-control" disabled>
-                                        </td>
-                                        <td align="right">$ <span id="amount" class="amount">0</span>
-                                        </td>
-                                    </tr>
-
-                                    <tr>
-                                        <td> <div class="prod-name"> Batata Frita</div></td>
-                                        <td>
-                                            <div class="button-container">
-                                                
-                                                <input type="text" name="qty" min="0" class="qty form-control" value="0"/>
-                                                <button class="cart-qty-minus" type="button" value="-">-</button>
-                                                <button class="cart-qty-plus" type="button" value="+">+</button>                              
-                                            </div>
-                                        </td>
-
-                                        <td>
-                                            <span>€</span><input type="text" value="3.5" class="price form-control" disabled>
-                                        </td>
-                                        <td align="right">$ <span id="amount" class="amount">0</span>
-                                        </td>
-                                    </tr>
-
-                                    <tr>
-                                        <td> <div class="prod-name"> Costela no bafo de cachaça</div></td>
-                                        <td>
-                                            <div class="button-container">
-                                                
-                                                <input type="text" name="qty" min="0" class="qty form-control" value="0"/>
-                                                <button class="cart-qty-minus" type="button" value="-">-</button>
-                                                <button class="cart-qty-plus" type="button" value="+">+</button>                              
-                                            </div>
-                                        </td>
-
-                                        <td>
-                                            <span>€</span><input type="text" value="8" class="price form-control" disabled>
-                                        </td>
-                                        <td align="right">$ <span id="amount" class="amount">0</span>
-                                        </td>
-                                    </tr>
-
-
-
-                                    </tbody>
-                                    
-                                </table>
-
-                                <h1> <br> TOTAL = $  <span id="total" class="total">0 </span> </h1>
+                                <h1> <br> TOTAL = €  <span id="total" class="total">0 </span> </h1>
+                                <h1> <br> TOTAL VEG = €  <span id="total_veg" class="total_veg">0 </span> </h1>
+                                <h1> <br> split 3 = €  <span id="split" class="split">0 </span> </h1>
+                                
                                     
                     </div>
                 </div>

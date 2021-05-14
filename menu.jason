@@ -1,0 +1,49 @@
+{
+  "results": [
+    {
+      
+      "name": {
+ 
+      },
+      "location": {
+ 
+      },
+      
+      "login": {
+ 
+      },
+      "dob": {
+
+      },
+      "registered": {
+    
+      },
+      "phone": "011-962-7516",
+      "cell": "081-454-0666",
+      "id": {
+ 
+      },
+      "picture": {
+        "large": "https://randomuser.me/api/portraits/men/75.jpg",
+        "medium": "https://randomuser.me/api/portraits/med/men/75.jpg",
+        "thumbnail": "https://randomuser.me/api/portraits/thumb/men/75.jpg"
+      },
+      "nat": "IE"
+    } 
+
+    
+
+
+  ],
+
+
+
+
+
+  "info": {
+    "seed": "fea8be3e64777240",
+    "results": 1,
+    "page": 1,
+    "version": "1.3"
+  }
+}
