@@ -219,7 +219,8 @@ img {
 
 
 .button-container{
-    display: flex;
+  display: table-cell;
+
     align-items: center;
 }
 .button-container .form-control{
@@ -230,51 +231,63 @@ img {
 }
 #myTable .form-control{
     width: 50px;
+    height: 25px;
     border: none;
-    background-color: rgba(255,255,255,0.0);
+    background-color: rgba(255,255,255,0.3);
     display: inline-block;
 }
+
+#myTable td{
+  text-align: center;
+  align-items: center;
+}
+
 .cart-qty-plus,
 .cart-qty-minus{
-    width: 38px;
-    height: 38px;
-    background-color: #fff;
-    border: 1px solid #ced4da;
+    width: 25px;
+    height: 25px;
+    background-color: rgb(125, 0, 150);
+    border:none;
     border-radius: .25rem;
 }
 .cart-qty-plus:hover,
 .cart-qty-minus:hover{
-    background-color: #610e99;
-    color: #fff;
+  opacity: 0.5;
+    
+    color: rgb(27, 27, 27);
 }
 
-thead tr{
-    background-color: #343A40;
+#myTable thead {
+    background-color: #555555;
     color: white;
 }
 
+
+
+
 .cart-qty-plus{
-    background-color:#cacaca;
+    background-color:#009e15;
     color:white;
     font-weight: 600;
 }
 .cart-qty-minus{
-    background-color:#cecece;
+    background-color:#e67315;
     color:white;
     font-weight: 600;
     margin-right: 5px;
 }
 
 .prod-name{
- 
+
   display: table-cell;
-  width: 550px;
   height: 50px;
   text-align: left;
   vertical-align: middle;
   padding-left: 10px;
   
 }
+
+
 
 .txt-al-m{
   display: table-cell;
@@ -283,6 +296,7 @@ thead tr{
 }
 
 .td-total{
-  background-color: #5161ce;
-  width: 150px;
+  float: right;
+  font-weight: bold;
+
 }
