@@ -124,54 +124,12 @@ function validator(pswd){
 
 
 /*
-#################################################################
-#################################################################
-Menu
+################################################################# Menu
+################################################################# Menu
 */
 
 
-
-
-//----------------Update Amounts -------
-
-
-
-
-
-function update_amounts(get_price, get_qty){
-
-    var amount =  (get_qty*get_price);
-    document.getElementById("amount_" + item_num).innerHTML = amount;
-
-
-    var qty_all_items = 4;
-    var total_no_veg = 0;
-    var total_veg = 0;
-
-    for (let i = 1; i <= qty_all_items; i++) {
-    
-    let item_val = document.querySelector('#item_' + i);
-    var is_veg = item_val.getAttribute("data-veg");
-
-    amount_item =document.getElementById("amount_" + i).innerHTML;
-
-    if ( is_veg == "false") {
-        total_no_veg += parseInt(amount_item);
-        document.getElementById("total_no_veg").innerHTML = total_no_veg;
-
-    }else {
-        total_veg += parseInt(amount_item);
-        document.getElementById("total_veg").innerHTML = total_veg;
-    }
-}
-
-
-
-
-}
-
-
-function check_item(n) {item_num = n;};
+function check_item(n) {item_num = n;}; // getting value from button on click
 
 //----------------increment or decrement-------
 
@@ -191,7 +149,7 @@ var incrementQty = plusBtn.click(function() {
     let amt = document.getElementById("amount_" + item_num).innerHTML;
     
    
-    update_amounts(price, qty);
+    update_amounts(price, qty, veg, categ);
     
 });
 
@@ -212,8 +170,49 @@ var decrementQty = minusBtn.click(function() {
     let amt = document.getElementById("amount_" + item_num).innerHTML;
 
     //update_prices
-    update_amounts(price, qty);
+    update_amounts(price, qty, veg, categ);
 });
+
+
+//---------------- update prices and  setting to total
+
+function update_amounts(price, qty, veg, categ){
+
+    var amount =  (qty*price);
+    document.getElementById("amount_" + item_num).innerHTML = amount;
+
+
+    var qty_all_items = 4;
+    var total_no_veg = 0;
+    var total_veg = 0;
+    var total_all = 0;
+
+    for (let i = 1; i <= qty_all_items; i++) {
+
+        let item_val = document.querySelector('#item_' + i);
+        var is_veg = item_val.getAttribute("data-veg");
+        
+        amount_item =document.getElementById("amount_" + i).innerHTML;
+
+        total_all += parseInt(amount_item);
+        document.getElementById("total_all").innerHTML = total_all;
+
+        if ( is_veg == "false") {
+            total_no_veg += parseInt(amount_item);
+            document.getElementById("total_no_veg").innerHTML = total_no_veg;
+
+        }else {
+            total_veg += parseInt(amount_item);
+            document.getElementById("total_veg").innerHTML = total_veg;
+        }
+}
+}
+
+
+
+
+
+
 
 // Split Items
 
