@@ -1,4 +1,3 @@
-
 // Script created to show the user from ramdom.me
     //Get API
     fetch('https://randomuser.me/api/?results=8')
@@ -17,7 +16,6 @@
                 output += `
   
             <div class="block-user"> 
-
                     <div class="round">    
                     <img src="${lists.picture.large}" alt="${lists.name.first}">
                     </div>
@@ -56,11 +54,11 @@
                             </table>
                         </div>    
               </div>
-
                 `;
             });
 
-           
+            var str = "Hello world, %ˆ&&**(()) welcome to the universe.";
+            var n = str.includes("$");
 
             //Show On Our Screen All Data
             document.getElementById('users').innerHTML = output;
@@ -125,194 +123,78 @@ function validator(pswd){
   });
 
 
+/*
+#################################################################
+#################################################################
+Menu
+*/
 
 
-// ############################################################################################
-// Script printing menu from jason that I create 
 
-fetch('menu.jason?menu')
-//fetch('menu.jason?results')
-    .then(res => res.json())
-    .then(data => {
-        // console.log(data);
 
-        let list_items = data.menu;
-        // console.log(author);
-
-        //Get Data Value
-        let output = "";
-
-        list_items.forEach(function (list) {
-            output += `
-
-            <tr>
-            <td> <div class="prod-name"> ${list.item.name} </div></td>
-            <td>
-                
-                <div class="button-container">            
-                    <input type="text"  name="qty" min="0" class="qty form-control" value="0" data-veg=${list.item.veg} data-categ="${list.item.category}"/>
-                    <span>x</span><input type="text" value="${list.item.price}" class="price form-control" disabled>  
-                    <button class="cart-qty-minus" type="button" onClick="check_item(this.value);" value="${list.item.id}"><</button>
-                    <button class="cart-qty-plus" type="button"  onClick="check_item(this.value);" value="${list.item.id}" >></button>
-
-                </div>
-            </td>
-            <td align="right">€<span id="amount" class="amount">0</span></td>
-        </tr>
-
-            `;
-        });
-
-        //Show On Our Screen All Data
-        document.getElementById('menu_jason').innerHTML = output;
-
-    });
+//----------------Update Amounts -------
 
 
 
 
 
-// ############################################################################################
-// Script printing menu from jason that I create 
+function update_amounts(get_price, get_qty){
+
+    var amount =  (get_qty*get_price);
+    document.getElementById("amount_" + item_num).innerHTML = amount;
 
 
+    var qty_all_items = 4;
+    var total_no_veg = 0;
+    var total_veg = 0;
 
-            
-// getting the Item ID 
-var item_num ; 
-
-function check_item(n) {
-    item_num = n;
-};
-
-
-
-var sum_veg = 0;
-
-function update_amounts(is_veg){
-
-  //  console.log('Veg: ' + test);
-
-
-
-    var sum = 0.0;
+    for (let i = 1; i <= qty_all_items; i++) {
     
-    $('#myTable > tbody  > tr').each(function() {
-        var qty = $(this).find('.qty').val();
-        var price = $(this).find('.price').val();
-        var amount = (qty*price)
-        
+    let item_val = document.querySelector('#item_' + i);
+    var is_veg = item_val.getAttribute("data-veg");
 
-        console.log('total veg 1: ' + sum_veg);
-        
-        if (is_veg == "false"){
+    amount_item =document.getElementById("amount_" + i).innerHTML;
 
-            sum+=amount;
-            var total_no_veg =  sum;
-            $('.total_no_veg').text(total_no_veg);
+    if ( is_veg == "false") {
+        total_no_veg += parseInt(amount_item);
+        document.getElementById("total_no_veg").innerHTML = total_no_veg;
 
-        }else{
-
-            if (sum_veg == 0){
-            
-            sum+=amount;
-            var sum_veg = sum;
-            var total_veg = sum_veg;
-
-            }else{
-
-            sum+=amount;
-            var sum_veg = sum -sum_veg;
-            var total_veg = sum_veg;
-
-
-            }
-
-            sum+=amount;
-            var sum_veg = sum;
-            var total_veg = sum_veg;
-
-          
-
-            $('.total_veg').text(total_veg);
-        }
-
-        console.log('Price: ' + price);
-        console.log('qty: ' + qty);
-        console.log('Sum: ' + sum);
-        console.log('total veg : ' + sum_veg);
-
-
-
-        // atualization of amount for each item
-        $(this).find('.amount').text(''+amount);
-
-        //console.log('SUM TOTAL = ' + sum);
-        //console.log('SUM NO VEG= ' + total_no_veg);
-        //console.log('SUM= VEG ' + total_veg);
-
-        //var total = total_no_veg + total_veg;
-
-     
-        $('.total_all').text(sum); // printing totall in html
-        var split_total = (sum / 3).toFixed(2); // spliting total in 3 and formating
-        $('.split').text(split_total); //printing split in html
-        total_no_veg, total_veg = 0
-
-
-    });
-
-
-
-    
-
- 
-     //split = total + total_veg ;
-   // $('.split').text(split);
-    
-
+    }else {
+        total_veg += parseInt(amount_item);
+        document.getElementById("total_veg").innerHTML = total_veg;
+    }
 }
 
 
 
-//----------------for quantity-increment-or-decrement-------
+
+}
+
+
+function check_item(n) {item_num = n;};
+
+//----------------increment or decrement-------
 
 var incrementQty;
 var decrementQty;
-
 var plusBtn  = $(".cart-qty-plus");
 var minusBtn = $(".cart-qty-minus");
-
-
-
-
-
-
-// #### ADD Botton
 var incrementQty = plusBtn.click(function() {
     var $n = $(this).parent(".button-container").find(".qty");
     $n.val(Number($n.val())+1 );
-   
-
-    let check = document.querySelector('#item_' + item_num);
-    let values = check.querySelector("input");
-
-    let categ = values.getAttribute("data-categ");
-    let veg = values.getAttribute("data-veg");
-
-    update_amounts(veg);
- 
-   // console.log(categ);
-    //console.log(veg);
+    // getting category and is veg
+    let item_val = document.querySelector('#item_' + item_num);
+    let categ = item_val.getAttribute("data-categ");
+    let veg = item_val.getAttribute("data-veg");
+    let price = item_val.getAttribute("data-price");
+    let qty = document.getElementById("qty_" + item_num).value;
+    let amt = document.getElementById("amount_" + item_num).innerHTML;
     
-  
-
-
+   
+    update_amounts(price, qty);
+    
 });
 
-
-
-//###### Minus Botton
 
 var decrementQty = minusBtn.click(function() {
     var $n = $(this)
@@ -322,19 +204,42 @@ var decrementQty = minusBtn.click(function() {
     if (QtyVal > 0) {
         $n.val(QtyVal-1);
     }
+    let item_val = document.querySelector('#item_' + item_num);
+    let categ = item_val.getAttribute("data-categ");
+    let veg = item_val.getAttribute("data-veg");
+    let price = item_val.getAttribute("data-price");
+    let qty = document.getElementById("qty_" + item_num).value;
+    let amt = document.getElementById("amount_" + item_num).innerHTML;
 
-    let check = document.querySelector('#item_' + item_num);
-    let values = check.querySelector("input");
-
-    let categ = values.getAttribute("data-categ");
-    let veg = values.getAttribute("data-veg");
-
-   // console.log(categ);
-    //console.log(veg);
-
-    update_amounts(veg);
+    //update_prices
+    update_amounts(price, qty);
 });
 
+// Split Items
+
+function split_items(n) {
+
+    var qty_all_items = n;
+    var total_no_veg = 0;
+    var total_veg = 0;
+
+    for (let i = 1; i <= qty_all_items; i++) {
+    
+    let item_val = document.querySelector('#item_' + i);
+    var is_veg = item_val.getAttribute("data-veg");
+
+    amount_item =document.getElementById("amount_" + i).innerHTML;
+
+    if ( is_veg == "false") {
+        total_no_veg += parseInt(amount_item);
+        document.getElementById("total_no_veg").innerHTML = total_no_veg;
+
+    }else {
+        total_veg += parseInt(amount_item);
+        document.getElementById("total_veg").innerHTML = total_veg;
+    }
+}
+};
 
 
-  
+
