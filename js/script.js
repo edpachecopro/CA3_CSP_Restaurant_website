@@ -68,56 +68,6 @@
 
 
 
-        fetch('menu.jason?menu')
-        //fetch('menu.jason?results')
-            .then(res => res.json())
-            .then(data => {
-                // console.log(data);
-    
-                let list_items = data.menu;
-                // console.log(author);
-    
-                //Get Data Value
-                let output = "";
-    
-    
-    
-    
-                list_items.forEach(function (list) {
-                    output += `
-    
-                    <tr>
-                    <td> <span id="item_${list.item.id}"  data-veg=${list.item.veg} data-categ="${list.item.category}" data-price="${list.item.price}"> ${list.item.name} </span></td>
-                    
-                    <td class="button-container">  
-                        <input id="qty_${list.item.id}" type="text"  name="qty" min="0" value="0" class="qty form-control" />
-                        <button class="cart-qty-minus" type="button" onClick="check_item(this.value);" value="${list.item.id}">-</button>
-                        <button class="cart-qty-plus" type="button"  onClick="check_item(this.value);" value="${list.item.id}" >+</button>
-                    </td>    
-                    <td > ${list.item.price} </td>
-    
-                    <td align="right">€<span id="amount_${list.item.id}" class="amount">0</span></td>
-                </tr>
-                    `;
-                });
-    
-               
-    
-                //Show On Our Screen All Data
-                document.getElementById('menu_jason').innerHTML = output;
-    
-            });
-
-
-
-
-
-
-
-
-
-
-
 // PSWD Validator
 
 function validator(pswd){
@@ -228,14 +178,16 @@ var decrementQty = minusBtn.click(function() {
 
 function update_amounts(price, qty, veg, categ){
 
-    var amount =  (qty*price);
+    var amount =  (qty*price).toFixed(2);
     document.getElementById("amount_" + item_num).innerHTML = amount;
 
 
-    var qty_all_items = 4;
+    var qty_all_items = 20;
     var total_no_veg = 0;
     var total_veg = 0;
     var total_all = 0;
+
+    if ( categ == "Startes") {
 
     for (let i = 1; i <= qty_all_items; i++) {
 
@@ -245,21 +197,94 @@ function update_amounts(price, qty, veg, categ){
         amount_item =document.getElementById("amount_" + i).innerHTML;
 
         total_all += parseInt(amount_item);
-        document.getElementById("total_all").innerHTML = total_all;
+        document.getElementById("st_total_all").innerHTML = total_all.toFixed(2);
 
         if ( is_veg == "false") {
             total_no_veg += parseInt(amount_item);
-            document.getElementById("total_no_veg").innerHTML = total_no_veg;
+            document.getElementById("st_total_no_veg").innerHTML = total_no_veg.toFixed(2);
 
         }else {
             total_veg += parseInt(amount_item);
-            document.getElementById("total_veg").innerHTML = total_veg;
+            document.getElementById("st_total_veg").innerHTML = total_veg.toFixed(2);
         }
+    }
+
+} else if( categ == "Main") {
+
+        for (let i = 1; i <= qty_all_items; i++) {
+
+        let item_val = document.querySelector('#item_' + i);
+        var is_veg = item_val.getAttribute("data-veg");
+        
+        amount_item =document.getElementById("amount_" + i).innerHTML;
+
+        total_all += parseInt(amount_item);
+        document.getElementById("m_total_all").innerHTML = total_all.toFixed(2);
+
+        if ( is_veg == "false") {
+            total_no_veg += parseInt(amount_item);
+            document.getElementById("m_total_no_veg").innerHTML = total_no_veg.toFixed(2);
+
+        }else {
+            total_veg += parseInt(amount_item);
+            document.getElementById("m_total_veg").innerHTML = total_veg.toFixed(2);
+        }
+    }
+
+}else if( categ == "Dessert") {
+
+
+    for (let i = 1; i <= qty_all_items; i++) {
+
+        let item_val = document.querySelector('#item_' + i);
+        var is_veg = item_val.getAttribute("data-veg");
+        
+        amount_item =document.getElementById("amount_" + i).innerHTML;
+
+        total_all += parseInt(amount_item);
+        document.getElementById("ds_total_all").innerHTML = total_all.toFixed(2);
+
+        if ( is_veg == "false") {
+            total_no_veg += parseInt(amount_item);
+            document.getElementById("ds_total_no_veg").innerHTML = total_no_veg.toFixed(2);
+
+        }else {
+            total_veg += parseInt(amount_item);
+            document.getElementById("ds_total_veg").innerHTML = total_veg.toFixed(2);
+        }
+    }
+
+
+}else if( categ == "Drinks") {
+
+
+    for (let i = 1; i <= qty_all_items; i++) {
+
+        let item_val = document.querySelector('#item_' + i);
+        var is_veg = item_val.getAttribute("data-veg");
+        
+        amount_item =document.getElementById("amount_" + i).innerHTML;
+
+        total_all += parseInt(amount_item);
+        document.getElementById("dk_total_all").innerHTML = total_all.toFixed(2);
+
+        if ( is_veg == "false") {
+            total_no_veg += parseInt(amount_item);
+            document.getElementById("dk_total_no_veg").innerHTML = total_no_veg.toFixed(2);
+
+        }else {
+            total_veg += parseInt(amount_item);
+            document.getElementById("dk_total_veg").innerHTML = total_veg.toFixed(2);
+        }
+    }
+
+
 }
+
+
+
+
 }
-
-
-
 
 
 
@@ -289,6 +314,5 @@ function split_items(n) {
     }
 }
 };
-
 
 

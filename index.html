@@ -5,55 +5,65 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> The best of Dublin</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/main.css">
     <link rel="preconnect" href="https://fonts.gstatic.com"> 
-<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,500;1,900&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,500;1,900&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" >
 
 </head>
 
 <body>
     <div class="container-fluid container-color" >
-                    <div id="header">
-                <div class="container">
-                        <nav class="navbar navbar-expand-lg navbar-light d-flex">
-                
-                            <a class="navbar-brand" href="#">
-                                <p>CS3 JavaScript</p>
-                            </a>
-                            <button
-                            class="navbar-toggler"
-                            type="button"
-                            data-toggle="collapse"
-                            data-target="#navbarNav"
-                            aria-controls="navbarNav"
-                            aria-expanded="false"
-                            aria-label="Toggle navigation"
-                            >
-                            <span class="navbar-toggler-icon"></span>
-                
-                            </button>
-                
-                            <div class="collapse navbar-collapse d-flex" id="navbarNav">
-                            <ul class="navbar-nav">
-                                <li class="nav-item"> <a class="nav-link active"  href="index.html">Home</a> </li>
-                                <li class="nav-item"> <a class="nav-link" href="about.html">About me</a></li>
-                                <li class="nav-item"><a class="nav-link" href="service.html">Services</a></li>
-                                <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-                            </ul>
-                            </div>
-                
-                        </nav>
-                </div>
+
+
+
+        <!--HEADER  Creating the header of the website-->
+     <div id="header">
+        <div class="container ">
+          <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+
+            <a class="navbar-brand" href="#">
+                <p>CS3 JavaScript</p>
+            </a>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-toggle="collapse"
+              data-target="#navbarNav"
+              aria-controls="navbarNav"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+
+            </button>
+
+            <div class="collapse navbar-collapse d-flex" id="navbarNav">
+              <ul class="navbar-nav">
+                <li class="nav-item"> <a class="nav-link active"  href="index.html">Home</a> </li>
+                <li class="nav-item"> <a class="nav-link" href="#pswd">Check PSWD </a></li>
+                <li class="nav-item"><a class="nav-link" href="#user"> users Ramdon</a></li>
+                <li class="nav-item"><a class="nav-link" href="#menu"> Restaurant Menu</a></li>
+              </ul>
             </div>
-            
+
+          </nav>
+        </div>
+      </div>
+      <!--//HEADER-->
+
+
+
+
 
             <!--    ########################################################################################-->
             <!--    ########################################################################################-->
             <!--    ########################################################################################-->
             <!--    Password Validator -->
 
-
+            <section id="pswd" class="top_m">
+                <div class="mg-top"> </div>
             <div id="psswd" class="row psw-validator">
 
                 <div class="col-sm-6 col-md-5 col-lg-6">
@@ -105,16 +115,22 @@
             
             
             </div>
+        </section>
 
             <!--    ########################################################################################-->
             <!--    ########################################################################################-->
             <!--    ########################################################################################-->
             <!--    User Ramdon  -->
 
+           
+        <section id="user">
+
+
+            <div class="mg-top"> </div>
             <div class=" container sec-users" >
                 <div id="users" >   </div>  
             </div>
-
+        </section>
             <!--    ########################################################################################-->
             <!--    ########################################################################################-->
             <!--    ########################################################################################-->
@@ -123,12 +139,16 @@
 
 
 
-            <svg id="Layer_1" class="bg-svg"  viewBox="0 0 1920 216.53"><defs><style>.cls-1{fill:#fff;}</style></defs><polygon id="bg-svg-menu" class="cls-1" points="658.93 60.87 981.43 216.53 1305.64 60.87 1920 60.87 1920 0 0 0 0 60.87 658.93 60.87"/></svg>
+            
+           
+            <section id="menu">
+                <div class="mg-top"> </div>
+                <svg id="Layer_1" class="bg-svg"  viewBox="0 0 1920 216.53"><defs><style>.cls-1{fill:#fff;}</style></defs><polygon id="bg-svg-menu" class="cls-1" points="658.93 60.87 981.43 216.53 1305.64 60.87 1920 60.87 1920 0 0 0 0 60.87 658.93 60.87"/></svg>
 
-            <div class=" row  mt-5 bg-menu-purple ">
+            <div class=" top_m row  mt-5 bg-menu-purple ">
                 <div class="row mt-5 justify-content-center ">
                     
-                    <div class="m-5 col-5 bg-menu ">
+                    <div class="m-5 col-8 bg-menu ">
                         
                         <h1>startes</h1>
                                 <table id="myTable" class=" table table-striped table-hover">                 
@@ -141,17 +161,77 @@
                                         </thead>
 
                                         <tr>
-                                            <td> <span id="item_1"  data-veg=false data-categ="Starters" data-price="13.5"> Angus Cheeseburger </span></td>
+                                            <td class="vg"> <span id="item_1" data-veg="true" data-categ="Startes" data-price="3.70"> French Fried Potatoes </span></td>
                                             
                                             <td class="button-container">  
-                                                <input id="qty_1" type="text"  name="qty" min="0" value="0" class="qty form-control" />
-                                                <button class="cart-qty-minus" type="button" onClick="check_item(this.value);" value="1">-</button>
-                                                <button class="cart-qty-plus" type="button"  onClick="check_item(this.value);" value="1" >+</button>
+                                                <input id="qty_1" type="text" name="qty" min="0" value="0" class="qty form-control">
+                                                <button class="cart-qty-minus" type="button" onclick="check_item(this.value);" value="1">-</button>
+                                                <button class="cart-qty-plus" type="button" onclick="check_item(this.value);" value="1">+</button>
                                             </td>    
-                                            <td > € 13.5 </td>
-                
+                                            <td> 3.70 </td>
+                            
                                             <td align="right">€<span id="amount_1" class="amount">0</span></td>
                                         </tr>
+                                            
+                            
+                                            <tr>
+                                            <td> <span id="item_2" data-veg="true" data-categ="Startes" data-price="3.00"> Colcannon Mash </span></td>
+                                            
+                                            <td class="button-container">  
+                                                <input id="qty_2" type="text" name="qty" min="0" value="0" class="qty form-control">
+                                                <button class="cart-qty-minus" type="button" onclick="check_item(this.value);" value="2">-</button>
+                                                <button class="cart-qty-plus" type="button" onclick="check_item(this.value);" value="2">+</button>
+                                            </td>    
+                                            <td> 3.00 </td>
+                            
+                                            <td align="right">€<span id="amount_2" class="amount">0</span></td>
+                                        </tr>
+                                            
+                            
+                                            <tr>
+                                            <td> <span id="item_3" data-veg="false" data-categ="Startes" data-price="5.50"> Buffalo Wings  </span></td>
+                                            
+                                            <td class="button-container">  
+                                                <input id="qty_3" type="text" name="qty" min="0" value="0" class="qty form-control">
+                                                <button class="cart-qty-minus" type="button" onclick="check_item(this.value);" value="3">-</button>
+                                                <button class="cart-qty-plus" type="button" onclick="check_item(this.value);" value="3">+</button>
+                                            </td>    
+                                            <td> 5.50 </td>
+                            
+                                            <td align="right">€<span id="amount_3" class="amount">0</span></td>
+                                        </tr>
+                                            
+                            
+                                            <tr>
+                                            <td> <span id="item_4" data-veg="false" data-categ="Startes" data-price="7.00"> Ham hock &amp; pistachio roll </span></td>
+                                            
+                                            <td class="button-container">  
+                                                <input id="qty_4" type="text" name="qty" min="0" value="0" class="qty form-control">
+                                                <button class="cart-qty-minus" type="button" onclick="check_item(this.value);" value="4">-</button>
+                                                <button class="cart-qty-plus" type="button" onclick="check_item(this.value);" value="4">+</button>
+                                            </td>    
+                                            <td> 7.00 </td>
+                            
+                                            <td align="right">€<span id="amount_4" class="amount">0</span></td>
+                                        </tr>
+                                            
+                            
+                                            <tr>
+                                            <td> <span id="item_5" data-veg="false" data-categ="Startes" data-price="9.30"> Potted crab </span></td>
+                                            
+                                            <td class="button-container">  
+                                                <input id="qty_5" type="text" name="qty" min="0" value="0" class="qty form-control">
+                                                <button class="cart-qty-minus" type="button" onclick="check_item(this.value);" value="5">-</button>
+                                                <button class="cart-qty-plus" type="button" onclick="check_item(this.value);" value="5">+</button>
+                                            </td>    
+                                            <td> 9.30 </td>
+                            
+                                            <td align="right">€<span id="amount_5" class="amount">0</span></td>
+                                        </tr>
+
+
+
+
                                     </tbody>
 
                                     <tfoot align="right" >
@@ -159,17 +239,17 @@
                                         <tr>
                                             <td colspan="2"></td>
                                             <td class="table-active">  <span class="td-total" ">Total: </span></td>
-                                            <td class="table-active">  <span id="total_all" class="total_all">0 </span></td>   
+                                            <td class="table-active">  <span id="st_total_all" class="total_all">0 </span></td>   
                                         </tr>
                                         <tr> 
                                             <td colspan="2"></td>
                                             <td>  <span class="td-total" >Total No-Vegetarian: </span></td>
-                                            <td>  <span id="total_no_veg" class="total_no_veg">0 </span></td>
+                                            <td>  <span id="st_total_no_veg" class="st_total_no_veg">0 </span></td>
                                         </tr>
                                         <tr> 
                                             <td colspan="2"></td>
                                             <td class="table-active">  <span class="td-total"  >Total Vegetarian: </span></td>
-                                            <td class="table-active">  <span id="total_veg" class="total_veg">0 </span></td>
+                                            <td class="table-active">  <span id="st_total_veg" class="total_veg">0 </span></td>
                                         </tr>
                                       
                                     </tfoot>
@@ -180,7 +260,7 @@
                     </div>
 
 
-                    <div class="m-5 col-5 bg-menu ">
+                    <div class="m-5 col-8 bg-menu ">
                         
                         <h1>Main Courses</h1>
                                 <table id="myTable" class=" table table-striped table-hover">                 
@@ -193,16 +273,72 @@
                                         </thead>
 
                                         <tr>
-                                            <td> <span id="item_1"  data-veg=false data-categ="Starters" data-price="13.5"> Angus Cheeseburger </span></td>
+                                            <td> <span id="item_6" data-veg="false" data-categ="Main" data-price="12.00"> Mustard-stuffed chicken </span></td>
                                             
                                             <td class="button-container">  
-                                                <input id="qty_1" type="text"  name="qty" min="0" value="0" class="qty form-control" />
-                                                <button class="cart-qty-minus" type="button" onClick="check_item(this.value);" value="1">-</button>
-                                                <button class="cart-qty-plus" type="button"  onClick="check_item(this.value);" value="1" >+</button>
+                                                <input id="qty_6" type="text" name="qty" min="0" value="0" class="qty form-control">
+                                                <button class="cart-qty-minus" type="button" onclick="check_item(this.value);" value="6">-</button>
+                                                <button class="cart-qty-plus" type="button" onclick="check_item(this.value);" value="6">+</button>
                                             </td>    
-                                            <td > € 13.5 </td>
-                
-                                            <td align="right">€<span id="amount_1" class="amount">0</span></td>
+                                            <td> 12.00 </td>
+                            
+                                            <td align="right">€<span id="amount_6" class="amount">0</span></td>
+                                        </tr>
+                                            
+                            
+                                            <tr>
+                                            <td> <span id="item_7" data-veg="false" data-categ="Main" data-price="11.00"> Easiest ever paella </span></td>
+                                            
+                                            <td class="button-container">  
+                                                <input id="qty_7" type="text" name="qty" min="0" value="0" class="qty form-control">
+                                                <button class="cart-qty-minus" type="button" onclick="check_item(this.value);" value="7">-</button>
+                                                <button class="cart-qty-plus" type="button" onclick="check_item(this.value);" value="7">+</button>
+                                            </td>    
+                                            <td> 11.00 </td>
+                            
+                                            <td align="right">€<span id="amount_7" class="amount">0</span></td>
+                                        </tr>
+                                            
+                            
+                                            <tr>
+                                            <td> <span id="item_8" data-veg="false" data-categ="Main" data-price="14.30"> Parmesan spring chicken  </span></td>
+                                            
+                                            <td class="button-container">  
+                                                <input id="qty_8" type="text" name="qty" min="0" value="0" class="qty form-control">
+                                                <button class="cart-qty-minus" type="button" onclick="check_item(this.value);" value="8">-</button>
+                                                <button class="cart-qty-plus" type="button" onclick="check_item(this.value);" value="8">+</button>
+                                            </td>    
+                                            <td> 14.30 </td>
+                            
+                                            <td align="right">€<span id="amount_8" class="amount">0</span></td>
+                                        </tr>
+                                            
+                            
+                                            <tr>
+                                            <td> <span id="item_9" data-veg="true" data-categ="Main" data-price="12.40  "> Crispy Greek-style pie  </span></td>
+                                            
+                                            <td class="button-container">  
+                                                <input id="qty_9" type="text" name="qty" min="0" value="0" class="qty form-control">
+                                                <button class="cart-qty-minus" type="button" onclick="check_item(this.value);" value="9">-</button>
+                                                <button class="cart-qty-plus" type="button" onclick="check_item(this.value);" value="9">+</button>
+                                            </td>    
+                                            <td> 12.40   </td>
+                            
+                                            <td align="right">€<span id="amount_9" class="amount">0</span></td>
+                                        </tr>
+                                            
+                            
+                                            <tr>
+                                            <td> <span id="item_10" data-veg="true" data-categ="Main" data-price="8.50"> Hearty pasta soup </span></td>
+                                            
+                                            <td class="button-container">  
+                                                <input id="qty_10" type="text" name="qty" min="0" value="0" class="qty form-control">
+                                                <button class="cart-qty-minus" type="button" onclick="check_item(this.value);" value="10">-</button>
+                                                <button class="cart-qty-plus" type="button" onclick="check_item(this.value);" value="10">+</button>
+                                            </td>    
+                                            <td> 8.50 </td>
+                            
+                                            <td align="right">€<span id="amount_10" class="amount">0</span></td>
                                         </tr>
                                     </tbody>
 
@@ -211,30 +347,269 @@
                                         <tr>
                                             <td colspan="2"></td>
                                             <td class="table-active">  <span class="td-total" ">Total: </span></td>
-                                            <td class="table-active">  <span id="total_all" class="total_all">0 </span></td>   
+                                            <td class="table-active">  <span id="m_total_all" class="total_all">0 </span></td>   
                                         </tr>
                                         <tr> 
                                             <td colspan="2"></td>
                                             <td>  <span class="td-total" >Total No-Vegetarian: </span></td>
-                                            <td>  <span id="total_no_veg" class="total_no_veg">0 </span></td>
+                                            <td>  <span id="m_total_no_veg" class="total_no_veg">0 </span></td>
                                         </tr>
                                         <tr> 
                                             <td colspan="2"></td>
                                             <td class="table-active">  <span class="td-total"  >Total Vegetarian: </span></td>
-                                            <td class="table-active">  <span id="total_veg" class="total_veg">0 </span></td>
+                                            <td class="table-active">  <span id="m_total_veg" class="total_veg">0 </span></td>
                                         </tr>
                                       
                                     </tfoot>
                            
                                     
-                                </table>       
+                                </table> 
+                                
+                                
+                                
+
  
                     </div>
 
 
-                    <button class="btn btn-outline-success" type="button"  onClick="split_items(this.value);" value="4">Clique Here To Split</button>
+
+                    <div class="m-5 col-8 bg-menu ">
+                        
+                        <h1>Desserts</h1>
+                                <table id="myTable" class=" table table-striped table-hover">                 
+                                    <tbody>
+                                        <thead >
+                                            <td> Item</td>
+                                            <td> Quantity</td>
+                                            <td> Price</td>
+                                            <td > <span >Total</span></td>
+                                        </thead>
+
+                                        <tr>
+                                            <td> <span id="item_11" data-veg="true" data-categ="Dessert" data-price="4.00"> Rice pudding </span></td>
+                                            
+                                            <td class="button-container">  
+                                                <input id="qty_11" type="text" name="qty" min="0" value="0" class="qty form-control">
+                                                <button class="cart-qty-minus" type="button" onclick="check_item(this.value);" value="11">-</button>
+                                                <button class="cart-qty-plus" type="button" onclick="check_item(this.value);" value="11">+</button>
+                                            </td>    
+                                            <td> 4.00 </td>
+                            
+                                            <td align="right">€<span id="amount_11" class="amount">0</span></td>
+                                        </tr>
+                                            
+                            
+                                            <tr>
+                                            <td> <span id="item_12" data-veg="true" data-categ="Dessert" data-price="7.50"> Lemon cheesecake </span></td>
+                                            
+                                            <td class="button-container">  
+                                                <input id="qty_12" type="text" name="qty" min="0" value="0" class="qty form-control">
+                                                <button class="cart-qty-minus" type="button" onclick="check_item(this.value);" value="12">-</button>
+                                                <button class="cart-qty-plus" type="button" onclick="check_item(this.value);" value="12">+</button>
+                                            </td>    
+                                            <td> 7.50 </td>
+                            
+                                            <td align="right">€<span id="amount_12" class="amount">0</span></td>
+                                        </tr>
+                                            
+                            
+                                            <tr>
+                                            <td> <span id="item_13" data-veg="true" data-categ="Dessert" data-price="9.00"> Tiramisu meringue roulade </span></td>
+                                            
+                                            <td class="button-container">  
+                                                <input id="qty_13" type="text" name="qty" min="0" value="0" class="qty form-control">
+                                                <button class="cart-qty-minus" type="button" onclick="check_item(this.value);" value="13">-</button>
+                                                <button class="cart-qty-plus" type="button" onclick="check_item(this.value);" value="13">+</button>
+                                            </td>    
+                                            <td> 9.00 </td>
+                            
+                                            <td align="right">€<span id="amount_13" class="amount">0</span></td>
+                                        </tr>
+                                            
+                            
+                                            <tr>
+                                            <td> <span id="item_14" data-veg="true" data-categ="Dessert" data-price="6.50"> Chocolate orange brownie tart </span></td>
+                                            
+                                            <td class="button-container">  
+                                                <input id="qty_14" type="text" name="qty" min="0" value="0" class="qty form-control">
+                                                <button class="cart-qty-minus" type="button" onclick="check_item(this.value);" value="14">-</button>
+                                                <button class="cart-qty-plus" type="button" onclick="check_item(this.value);" value="14">+</button>
+                                            </td>    
+                                            <td> 6.50 </td>
+                            
+                                            <td align="right">€<span id="amount_14" class="amount">0</span></td>
+                                        </tr>
+                                            
+                            
+                                            <tr>
+                                            <td> <span id="item_15" data-veg="true" data-categ="Dessert" data-price="8.50"> Mango &amp; coconut trifles </span></td>
+                                            
+                                            <td class="button-container">  
+                                                <input id="qty_15" type="text" name="qty" min="0" value="0" class="qty form-control">
+                                                <button class="cart-qty-minus" type="button" onclick="check_item(this.value);" value="15">-</button>
+                                                <button class="cart-qty-plus" type="button" onclick="check_item(this.value);" value="15">+</button>
+                                            </td>    
+                                            <td> 8.50 </td>
+                            
+                                            <td align="right">€<span id="amount_15" class="amount">0</span></td>
+                                        </tr>
+
+
+
+
+                                    </tbody>
+
+                                    <tfoot align="right" >
+                                       
+                                        <tr>
+                                            <td colspan="2"></td>
+                                            <td class="table-active">  <span class="td-total" ">Total: </span></td>
+                                            <td class="table-active">  <span id="ds_total_all" class="total_all">0 </span></td>   
+                                        </tr>
+                                        <tr> 
+                                            <td colspan="2"></td>
+                                            <td>  <span class="td-total" >Total No-Vegetarian: </span></td>
+                                            <td>  <span id="ds_total_no_veg" class="total_no_veg">0 </span></td>
+                                        </tr>
+                                        <tr> 
+                                            <td colspan="2"></td>
+                                            <td class="table-active">  <span class="td-total"  >Total Vegetarian: </span></td>
+                                            <td class="table-active">  <span id="ds_total_veg" class="total_veg">0 </span></td>
+                                        </tr>
+                                      
+                                    </tfoot>
+                           
+                                    
+                                </table> 
+                                
+                                
+                                
+
+ 
+                    </div>
+
+
+
+                    <div class="m-5 col-8 bg-menu ">
+                        
+                        <h1>Drinks</h1>
+                                <table id="myTable" class=" table table-striped table-hover">                 
+                                    <tbody>
+                                        <thead >
+                                            <td> Item</td>
+                                            <td> Quantity</td>
+                                            <td> Price</td>
+                                            <td > <span >Total</span></td>
+                                        </thead>
+
+                                  
+                                        <tr>
+                                            <td> <span id="item_16" data-veg="true" data-categ="Drinks" data-price="8.00"> Watermelon smoothie </span></td>
+                                            
+                                            <td class="button-container">  
+                                                <input id="qty_16" type="text" name="qty" min="0" value="0" class="qty form-control">
+                                                <button class="cart-qty-minus" type="button" onclick="check_item(this.value);" value="16">-</button>
+                                                <button class="cart-qty-plus" type="button" onclick="check_item(this.value);" value="16">+</button>
+                                            </td>    
+                                            <td> 8.00 </td>
+                            
+                                            <td align="right">€<span id="amount_16" class="amount">0</span></td>
+                                        </tr>
+                                            
+                            
+                                            <tr>
+                                            <td> <span id="item_17" data-veg="true" data-categ="Drinks" data-price="9.00"> Rhubarb gin </span></td>
+                                            
+                                            <td class="button-container">  
+                                                <input id="qty_17" type="text" name="qty" min="0" value="0" class="qty form-control">
+                                                <button class="cart-qty-minus" type="button" onclick="check_item(this.value);" value="17">-</button>
+                                                <button class="cart-qty-plus" type="button" onclick="check_item(this.value);" value="17">+</button>
+                                            </td>    
+                                            <td> 9.00 </td>
+                            
+                                            <td align="right">€<span id="amount_17" class="amount">0</span></td>
+                                        </tr>
+                                            
+                            
+                                            <tr>
+                                            <td> <span id="item_18" data-veg="true" data-categ="Drinks" data-price="7.50"> Chocolate martini </span></td>
+                                            
+                                            <td class="button-container">  
+                                                <input id="qty_18" type="text" name="qty" min="0" value="0" class="qty form-control">
+                                                <button class="cart-qty-minus" type="button" onclick="check_item(this.value);" value="18">-</button>
+                                                <button class="cart-qty-plus" type="button" onclick="check_item(this.value);" value="18">+</button>
+                                            </td>    
+                                            <td> 7.50 </td>
+                            
+                                            <td align="right">€<span id="amount_18" class="amount">0</span></td>
+                                        </tr>
+                                            
+                            
+                                            <tr>
+                                            <td> <span id="item_19" data-veg="true" data-categ="Drinks" data-price="5.50"> Pint Guinness </span></td>
+                                            
+                                            <td class="button-container">  
+                                                <input id="qty_19" type="text" name="qty" min="0" value="0" class="qty form-control">
+                                                <button class="cart-qty-minus" type="button" onclick="check_item(this.value);" value="19">-</button>
+                                                <button class="cart-qty-plus" type="button" onclick="check_item(this.value);" value="19">+</button>
+                                            </td>    
+                                            <td> 5.50 </td>
+                            
+                                            <td align="right">€<span id="amount_19" class="amount">0</span></td>
+                                        </tr>
+                                            
+                            
+                                            <tr>
+                                            <td> <span id="item_20" data-veg="true" data-categ="Drinks" data-price="6.00"> Pint any Larger </span></td>
+                                            
+                                            <td class="button-container">  
+                                                <input id="qty_20" type="text" name="qty" min="0" value="0" class="qty form-control">
+                                                <button class="cart-qty-minus" type="button" onclick="check_item(this.value);" value="20">-</button>
+                                                <button class="cart-qty-plus" type="button" onclick="check_item(this.value);" value="20">+</button>
+                                            </td>    
+                                            <td> 6.00 </td>
+                            
+                                            <td align="right">€<span id="amount_20" class="amount">0</span></td>
+                                        </tr>
+
+
+                                    </tbody>
+
+                                    <tfoot align="right" >
+                                       
+                                        <tr>
+                                            <td colspan="2"></td>
+                                            <td class="table-active">  <span class="td-total" ">Total: </span></td>
+                                            <td class="table-active">  <span id="dk_total_all" class="total_all">0 </span></td>   
+                                        </tr>
+                                        <tr> 
+                                            <td colspan="2"></td>
+                                            <td>  <span class="td-total" >Total No-Vegetarian: </span></td>
+                                            <td>  <span id="dk_total_no_veg" class="total_no_veg">0 </span></td>
+                                        </tr>
+                                        <tr> 
+                                            <td colspan="2"></td>
+                                            <td class="table-active">  <span class="td-total"  >Total Vegetarian: </span></td>
+                                            <td class="table-active">  <span id="dk_total_veg" class="total_veg">0 </span></td>
+                                        </tr>
+                                      
+                                    </tfoot>
+                           
+                                    
+                                </table> 
+                                
+                                
+                                
+
+ 
+                    </div>
+
+
+    
 
                 </div>
+
+            </section>      
          </div>
 
 
@@ -254,7 +629,8 @@
    <script src='https://code.jquery.com/jquery-3.4.1.min.js'></script>
    <script src='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js'></script>
     
-<script src="script.js"></script>
+<script src="js/script.js"></script>
+
 
 
 </body>
