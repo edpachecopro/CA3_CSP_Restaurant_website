@@ -187,99 +187,104 @@ function update_amounts(price, qty, veg, categ){
     var total_veg = 0;
     var total_all = 0;
 
-    if ( categ == "Startes") {
+        if ( categ == "Startes") {
 
-    for (let i = 1; i <= qty_all_items; i++) {
+            for (let i = 1; i <= qty_all_items; i++) {
 
-        let item_val = document.querySelector('#item_' + i);
-        var is_veg = item_val.getAttribute("data-veg");
-        
-        amount_item =document.getElementById("amount_" + i).innerHTML;
+            let item_val = document.querySelector('#item_' + i);
+            var is_veg = item_val.getAttribute("data-veg");
+            
+            amount_item =document.getElementById("amount_" + i).innerHTML;
 
-        total_all += parseInt(amount_item);
-        document.getElementById("st_total_all").innerHTML = total_all.toFixed(2);
+            total_all += parseFloat(amount_item);
+            
+            document.getElementById("st_total_all").innerHTML = total_all.toFixed(2);
 
-        if ( is_veg == "false") {
-            total_no_veg += parseInt(amount_item);
-            document.getElementById("st_total_no_veg").innerHTML = total_no_veg.toFixed(2);
+                if ( is_veg == "false") {
+                    total_no_veg += parseFloat(amount_item);
+                    
+                    document.getElementById("st_total_no_veg").innerHTML = total_no_veg.toFixed(2);
 
-        }else {
-            total_veg += parseInt(amount_item);
-            document.getElementById("st_total_veg").innerHTML = total_veg.toFixed(2);
+                }
+                else {
+                    total_veg += parseFloat(amount_item);
+                    document.getElementById("st_total_veg").innerHTML = total_veg.toFixed(2);
+                }
+
+            }
+
+        } 
+        else if( categ == "Main") {
+
+            for (let i = 1; i <= qty_all_items; i++) {
+
+                let item_val = document.querySelector('#item_' + i);
+                var is_veg = item_val.getAttribute("data-veg");
+                
+                amount_item =document.getElementById("amount_" + i).innerHTML;
+
+                total_all += parseFloat(amount_item);
+                document.getElementById("m_total_all").innerHTML = total_all.toFixed(2);
+
+                    if ( is_veg == "false") {
+                        total_no_veg += parseFloat(amount_item);
+                        document.getElementById("m_total_no_veg").innerHTML = total_no_veg.toFixed(2);
+
+                    }else {
+                        total_veg += parseFloat(amount_item);
+                        document.getElementById("m_total_veg").innerHTML = total_veg.toFixed(2);
+                    }
+            }
+
+        }else if( categ == "Dessert") {
+
+
+            for (let i = 1; i <= qty_all_items; i++) {
+
+                let item_val = document.querySelector('#item_' + i);
+                var is_veg = item_val.getAttribute("data-veg");
+                
+                amount_item =document.getElementById("amount_" + i).innerHTML;
+
+                total_all += parseFloat(amount_item);
+                document.getElementById("ds_total_all").innerHTML = total_all.toFixed(2);
+
+                if ( is_veg == "false") {
+                    total_no_veg += parseFloat(amount_item);
+                    document.getElementById("ds_total_no_veg").innerHTML = total_no_veg.toFixed(2);
+
+                }else {
+                    total_veg += parseFloat(amount_item);
+                    document.getElementById("ds_total_veg").innerHTML = total_veg.toFixed(2);
+                }
+            }
+
+
+        }else if( categ == "Drinks") {
+
+
+            for (let i = 1; i <= qty_all_items; i++) {
+
+                let item_val = document.querySelector('#item_' + i);
+                var is_veg = item_val.getAttribute("data-veg");
+                
+                amount_item =document.getElementById("amount_" + i).innerHTML;
+
+                total_all += parseFloat(amount_item);
+                document.getElementById("dk_total_all").innerHTML = total_all.toFixed(2);
+
+                if ( is_veg == "false") {
+                    total_no_veg += parseFloat(amount_item);
+                    document.getElementById("dk_total_no_veg").innerHTML = total_no_veg.toFixed(2);
+
+                }else {
+                    total_veg += parseFloat(amount_item);
+                    document.getElementById("dk_total_veg").innerHTML = total_veg.toFixed(2);
+                }
+            }
+
+
         }
-    }
-
-} else if( categ == "Main") {
-
-        for (let i = 1; i <= qty_all_items; i++) {
-
-        let item_val = document.querySelector('#item_' + i);
-        var is_veg = item_val.getAttribute("data-veg");
-        
-        amount_item =document.getElementById("amount_" + i).innerHTML;
-
-        total_all += parseInt(amount_item);
-        document.getElementById("m_total_all").innerHTML = total_all.toFixed(2);
-
-        if ( is_veg == "false") {
-            total_no_veg += parseInt(amount_item);
-            document.getElementById("m_total_no_veg").innerHTML = total_no_veg.toFixed(2);
-
-        }else {
-            total_veg += parseInt(amount_item);
-            document.getElementById("m_total_veg").innerHTML = total_veg.toFixed(2);
-        }
-    }
-
-}else if( categ == "Dessert") {
-
-
-    for (let i = 1; i <= qty_all_items; i++) {
-
-        let item_val = document.querySelector('#item_' + i);
-        var is_veg = item_val.getAttribute("data-veg");
-        
-        amount_item =document.getElementById("amount_" + i).innerHTML;
-
-        total_all += parseInt(amount_item);
-        document.getElementById("ds_total_all").innerHTML = total_all.toFixed(2);
-
-        if ( is_veg == "false") {
-            total_no_veg += parseInt(amount_item);
-            document.getElementById("ds_total_no_veg").innerHTML = total_no_veg.toFixed(2);
-
-        }else {
-            total_veg += parseInt(amount_item);
-            document.getElementById("ds_total_veg").innerHTML = total_veg.toFixed(2);
-        }
-    }
-
-
-}else if( categ == "Drinks") {
-
-
-    for (let i = 1; i <= qty_all_items; i++) {
-
-        let item_val = document.querySelector('#item_' + i);
-        var is_veg = item_val.getAttribute("data-veg");
-        
-        amount_item =document.getElementById("amount_" + i).innerHTML;
-
-        total_all += parseInt(amount_item);
-        document.getElementById("dk_total_all").innerHTML = total_all.toFixed(2);
-
-        if ( is_veg == "false") {
-            total_no_veg += parseInt(amount_item);
-            document.getElementById("dk_total_no_veg").innerHTML = total_no_veg.toFixed(2);
-
-        }else {
-            total_veg += parseInt(amount_item);
-            document.getElementById("dk_total_veg").innerHTML = total_veg.toFixed(2);
-        }
-    }
-
-
-}
 
 
 
