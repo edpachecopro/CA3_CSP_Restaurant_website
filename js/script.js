@@ -216,6 +216,8 @@ function update_amounts(price, qty, veg, categ){
 
 }
 
+
+
 $(window).scroll(function(){console.log($(window).scrollTop());
 
     let show_price = document.getElementById('total_fixed');
