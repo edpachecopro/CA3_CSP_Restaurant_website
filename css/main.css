@@ -1,11 +1,7 @@
 
 
-body{
-    font-family: 'Roboto', sans-serif;
-}
-h3{
-  margin: 0px;
-}
+body{ font-family: 'Poppins', sans-serif; }
+h3{margin: 0px;}
 h1{
   color: white;
   text-align: center;
@@ -23,13 +19,12 @@ h1{
 
 header{
     height: 50px;
-
 }
 .mg-top{
   height: 100px;
 }
 footer {
-  background-color: #555555;
+  background-color: #000000;
   color: white;
   height: 50px;
   margin: 0;
@@ -42,27 +37,17 @@ footer {
   vertical-align: middle;
 }
 
-.bg-menu-purple{
-  background: linear-gradient(143deg, rgba(27,177,213,1) 0%, rgba(102,39,255,1) 47%, rgba(90,189,255,1) 100%);
+
+.img_over{
+  background-image:linear-gradient(143deg, rgba(27,177,213, 1) 0%, rgba(102,39,255, 0.7) 47%, rgba(90,189,255,0.5)),
+  url('../img/rest_bg.jpg');
+  background-size: cover;
+  background-blend-mode:hard-light;
 }
 
+.bg-svg{ margin-bottom: -120px;}
 
-
-
-
-
-.bg-svg{
-
-margin-bottom: -120px;
-
-}
-
-.mg-tb{
-padding: 15px, 15px, 15px, 15px;
-}
-
-
-
+.mg-tb{ padding: 15px, 15px, 15px, 15px; }
 
 .bg-menu{
 
@@ -71,12 +56,38 @@ padding: 15px, 15px, 15px, 15px;
     padding-left: 35px;
     padding-right: 15px;
     padding-bottom: 15px;
-    background-color: rgba(255,255,255,0.5);
+    background-color: rgba(253, 253, 253, 0.8);
     box-shadow: 0px 0px 12px 2px rgba(0,0,0,0.3);
     text-align: center;
     color: white;
     
 }
+
+.categ_title{
+
+  background-color: #555555;
+  position:relative;
+  top: 13px;
+  padding-top: 8px;
+  padding-bottom: 13px;
+  border-radius: 20px;
+  font-size: 30px;
+  z-index: 0;
+}
+
+.total_fixed{
+  z-index: 0 ;
+  position: absolute;
+  position:fixed!important;
+  left: 80vw; 
+  top:50vh;
+  border-radius: 15px;
+  background-color: rgba(253, 253, 253, 1);
+  box-shadow: 0px 0px 12px 2px rgba(0,0,0,0.3);
+  padding-right: 10px;
+
+}
+
 
 
 .psw-validator{
@@ -327,10 +338,6 @@ margin-right: 30px;
     margin-right: 5px;
 }
 
-
-
-
-
 .txt-al-m{
   display: table-cell;
   vertical-align: middle;
@@ -343,55 +350,6 @@ margin-right: 30px;
 
 }
 
-/* Layout
------------------------------------------------------------------------------ */
-.header {
-	color: #ffffff;
-	background-color: rgba(0, 0, 0, 0.10);
-	padding: 10px 0;
-	-webkit-transition: all 0.2s ease-in-out;
-	-moz-transition: all 0.2s ease-in-out;
-	-o-transition: all 0.2s ease-in-out;
-	-ms-transition: all 0.2s ease-in-out;
-	transition: all 0.2s ease-in-out;
-}
-.banner {
-	width: 100%;
-	height: 100%;
-	min-height: 100%;
-	position: relative;
-	color: #fff;
-}
-.banner-image {
-	vertical-align: middle;
-	min-height: 100%;
-	width: 100%;
-}
-.banner:after {
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	background-color: rgba(0, 0, 0, 0.55);
-	content: "";
-}
-.banner-caption {
-	position: absolute;
-	top: 40%;
-	width: 100%;
-	z-index: 2;
-}
-.subfooter {
-	background-color: #fafafa;
-	border-top: 1px solid #f3f3f3;
-	border-bottom: 1px solid #f3f3f3;
-	padding: 40px 0;
-}
-.section {
-	background-color: #ffffff;
-	padding: 80px 0;
-}
 
 
 
