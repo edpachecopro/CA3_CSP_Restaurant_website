@@ -600,12 +600,26 @@
                    
                   
 
-                    <div class="input-group mb-3"> 
+                    
                            
-                        <input type="text" id="split_qty" name="split_qty" class="form-control" aria-placeholder="Split Total Bill in?" placeholder="Split Total Bill in?" aria-describedby="bt_split" >
-                        <a  tabindex="0" id="bt_split" class="btn btn-outline-secondary" type="button"  onclick="split_bills(split_qty.value)"  data-bs-toggle="popover" data-bs-trigger="focus" data-bs-placement="top" >Split</a>
-                      
-                    </div>
+    
+
+                        <div class="input-group mb-3"> 
+                           
+                            <input type="text" id="split_qty"  class="form-control"  placeholder="Split Total Bill in?"  >
+                            <a  tabindex="0" id="bt_split" class="btn btn-outline-secondary" type="button"  onclick="split_bills(split_qty.value)"   >Split</a>
+                          
+                        </div>
+                        <div class="split_res mb-3">
+                            <span id="res_split"> 
+                        </div>
+
+             
+
+
+                 
+
+
 
 
                 </div>

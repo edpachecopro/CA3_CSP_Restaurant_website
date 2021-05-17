@@ -231,31 +231,47 @@ function split_bills(split_qty){
      
   let split = parseInt(split_qty);
 
-    console.log('clicado');
+  
     let total_bill = document.getElementById("total_all").innerHTML;
     let total_splited = parseFloat(total_bill) / split_qty;
-    let msg_pop = "Bill Splited in " + split_qty + " is € " + total_splited.toFixed(2) + " for each.";
-    console.log('total bill= ' + total_bill);    
-    console.log('split = ' + split);    
-    console.log('clicado');    
+    let msg_pop = ` Bill Splited in  <span style="color: #e67315;"> ${split_qty} </span> <br> is <span style="color: #e67315;"> €   ${total_splited.toFixed(2)} </span>  for each.`;
+  
 
    if ( isNaN(split ) ){
-    document.getElementById("bt_split").setAttribute( "data-bs-content",  "Your Bag is empty" );
-   
+        document.getElementById("res_split").innerHTML = " Is not a number";
+        cleanSplit();
 
    } else if (split_qty <= 0 | isNaN(split_qty) ) {
-
-    document.getElementById("bt_split").setAttribute( "data-bs-content",  "Enter a Valid number" );
-
+        document.getElementById("res_split").innerHTML =  "Enter a Valid number";
+        cleanSplit();
    } 
-   else
+   else if (total_bill == 0 ){
+    document.getElementById("res_split").innerHTML =  "Your bag is empty";
+    cleanSplit();
+
+   }else
    {
-    document.getElementById("bt_split").setAttribute( "data-bs-content",  msg_pop );
-   }
+
+    document.getElementById("res_split").innerHTML = msg_pop;
+}
 
 };
 
 
+function cleanSplit() { 
+
+  var delay1 = 1300; //2second
+  var delay2 = 3000; //2second
+
+  setTimeout(function () {
+    document.getElementById("res_split").innerHTML =  "Try again";
+  }, delay1);
+
+  setTimeout(function () {
+    document.getElementById("res_split").innerHTML =  "";
+  }, delay2);
+
+};
 
 $(window).scroll(function(){
 
