@@ -4,10 +4,10 @@
     //fetch('menu.jason?results')
         .then(res => res.json())
         .then(data => {
-            // console.log(data);
+          
 
             let author = data.results;
-            // console.log(author);
+          
 
             //Get Data Value
             let output = "";
@@ -218,10 +218,49 @@ function update_amounts(price, qty, veg, categ){
 
 
 
-$(window).scroll(function(){console.log($(window).scrollTop());
+var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+  return new bootstrap.Popover(popoverTriggerEl)
+})
+
+
+
+
+
+function split_bills(split_qty){
+     
+  let split = parseInt(split_qty);
+
+    console.log('clicado');
+    let total_bill = document.getElementById("total_all").innerHTML;
+    let total_splited = parseFloat(total_bill) / split_qty;
+    let msg_pop = "Bill Splited in " + split_qty + " is € " + total_splited.toFixed(2) + " for each.";
+    console.log('total bill= ' + total_bill);    
+    console.log('split = ' + split);    
+    console.log('clicado');    
+
+   if ( isNaN(split ) ){
+    document.getElementById("bt_split").setAttribute( "data-bs-content",  "Your Bag is empty" );
+   
+
+   } else if (split_qty <= 0 | isNaN(split_qty) ) {
+
+    document.getElementById("bt_split").setAttribute( "data-bs-content",  "Enter a Valid number" );
+
+   } 
+   else
+   {
+    document.getElementById("bt_split").setAttribute( "data-bs-content",  msg_pop );
+   }
+
+};
+
+
+
+$(window).scroll(function(){
 
     let show_price = document.getElementById('total_fixed');
-    console.log(show_price);
+  
 
     if($(window).scrollTop() > 2000 && $(window).scrollTop() < 5500)
     {    
