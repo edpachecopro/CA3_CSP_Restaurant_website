@@ -1,0 +1,78 @@
+.desktop {
+    display: block;
+    /* ou inline, inline-block */
+  }
+  
+  .mobile {
+    display: none;
+  }
+  
+  @media(max-width: 480px) {
+    #header .nav-link {
+        margin-left: 15px;
+        margin-right: 15px;
+      }
+    
+      h1 {
+        font-size: 20vw;
+      }
+      h2 {
+        font-size: 17vw;
+        margin-top: 100px;
+      }
+      
+      .block-user{
+        width: 100%;
+        margin: 10px;
+        }
+    
+        .psw-validator{
+          display: block;
+          height: 500px;
+          margin-top: 30px;
+          margin-bottom: 30px;
+          background-image:linear-gradient(143deg, rgb(78, 78, 78) 0%, rgba(52, 53, 51, 0.7) 47%, rgba(107, 107, 107, 0.5)),
+          url('../img/pswd.jpg');
+          background-blend-mode:hard-light;
+          background-size: cover;
+          background-position: center;
+        }
+        .form {
+          margin-left: 16%;
+          
+          float: left;
+          width: 550px;
+          
+        }
+    
+        .form .form-element .password-policies {
+       
+          position:relative;
+          top:0px;
+          left: 30%;
+          transform:translateX(-50%);
+          width:60%;
+          padding:0px;
+          height:0px;
+          background-color: rgb(255,255,255,);
+          border-radius:5px;
+          margin-top:10px;
+          padding-bottom: 10px;
+          box-sizing:border-box;
+          overflow:hidden;
+          transition: height 500ms ease-in-out,
+                      opacity 500ms ease-in-out;
+        }
+        .form .form-element .password-policies.active {
+    
+          padding:10px;
+          height:220px;
+        }
+        .lock-svg{
+          margin-top: 10%;
+          margin-left: 40%;
+          size: 300px;
+        }
+      
+    
+  }

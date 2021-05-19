@@ -14,8 +14,6 @@
             let output = "";
 
 
-
-
             list_items.forEach(function (list) {
                 output += `
 

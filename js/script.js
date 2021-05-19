@@ -1,5 +1,9 @@
-// Script created to show the user from ramdom.me
-    //Get API
+ 
+ /*
+ ################################################################# 
+ Script created to show the user from ramdom.me
+*/   
+//Get API
     fetch('https://randomuser.me/api/?results=8')
     //fetch('menu.jason?results')
         .then(res => res.json())
@@ -66,8 +70,6 @@
         });
 
 
-
-
 // PSWD Validator
 
 function validator(pswd){
@@ -124,12 +126,11 @@ function validator(pswd){
 
 
 /*
-################################################################# Menu
-################################################################# Menu
+ Restaurant menu ################################################################# 
 */
 
-
 function check_item(n) {item_num = n;}; // getting value from button on click
+
 
 //----------------increment or decrement-------
 
@@ -181,7 +182,7 @@ function update_amounts(price, qty, veg, categ){
     var amount =  (qty*price).toFixed(2);
     document.getElementById("amount_" + item_num).innerHTML = amount;
 
-
+    console.log(item_num);
     var qty_all_items = 20;
     var total_no_veg = 0;
     var total_veg = 0;
@@ -217,15 +218,7 @@ function update_amounts(price, qty, veg, categ){
 }
 
 
-
-var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
-var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
-  return new bootstrap.Popover(popoverTriggerEl)
-})
-
-
-
-
+//---------------- Split total 
 
 function split_bills(split_qty){
      
@@ -239,24 +232,30 @@ function split_bills(split_qty){
 
    if ( isNaN(split ) ){
         document.getElementById("res_split").innerHTML = " Is not a number";
+        document.getElementById('split_qty').value='';
         cleanSplit();
 
    } else if (split_qty <= 0 | isNaN(split_qty) ) {
         document.getElementById("res_split").innerHTML =  "Enter a Valid number";
+        document.getElementById('split_qty').value='';
         cleanSplit();
    } 
    else if (total_bill == 0 ){
     document.getElementById("res_split").innerHTML =  "Your bag is empty";
+    document.getElementById('split_qty').value='';
+    
     cleanSplit();
 
    }else
    {
 
     document.getElementById("res_split").innerHTML = msg_pop;
+    document.getElementById('split_qty').value='';
 }
 
 };
 
+// Cleaning the input form after user entered wrong
 
 function cleanSplit() { 
 
@@ -276,18 +275,33 @@ function cleanSplit() {
 $(window).scroll(function(){
 
     let show_price = document.getElementById('total_fixed');
-  
 
-    if($(window).scrollTop() > 2000 && $(window).scrollTop() < 5500)
-    {    
-        show_price.style.visibility = 'visible';
 
-    } else {
-        
-        show_price.style.visibility = 'hidden';
+    if (screen.width <= 600){
 
-        
+
+        if($(window).scrollTop() > 4900 && $(window).scrollTop() < 9500)
+        {    
+            show_price.style.visibility = 'visible';
+        } else {       
+            show_price.style.visibility = 'hidden';  
+        }
+
+
+
+    }else{
+
+        if($(window).scrollTop() > 2000 && $(window).scrollTop() < 9500)
+        {    
+            show_price.style.visibility = 'visible';
+        } else {       
+            show_price.style.visibility = 'hidden';  
+        }
+
+
+
     }
+
 });
 
 
